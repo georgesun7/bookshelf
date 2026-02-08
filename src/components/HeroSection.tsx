@@ -1,12 +1,9 @@
-import heroBg from "@/assets/hero-bg.jpg";
+import FluidWave from "./FluidWave";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.07]"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background">
+      <FluidWave />
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
         <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body">
           Journalist &amp; Writer
