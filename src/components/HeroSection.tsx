@@ -1,20 +1,27 @@
+import { motion } from "framer-motion";
 import FluidWave from "./FluidWave";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-[70vh] flex items-end pb-16 overflow-hidden">
       <FluidWave />
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body">
-          Journalist &amp; Writer
-        </p>
-        <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight text-foreground leading-[1.1] mb-6">
-          Your Name
-        </h1>
-        <div className="w-16 h-px bg-foreground mx-auto mb-6" />
-        <p className="text-lg md:text-xl text-muted-foreground font-body font-light leading-relaxed max-w-xl mx-auto">
-          Telling stories that matter. Investigative journalism, long-form writing, and documentary video.
-        </p>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-xs uppercase tracking-[0.35em] text-muted-foreground mb-4 font-body"
+        >
+          journalist &amp; writer
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9]"
+        >
+          your name
+        </motion.h1>
       </div>
     </section>
   );
