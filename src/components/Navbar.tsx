@@ -19,7 +19,7 @@ const Navbar = () => {
             onClick={() => setInfoOpen(true)}
             className="text-sm font-body font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors"
           >
-            info
+            about
           </button>
         </div>
       </nav>
