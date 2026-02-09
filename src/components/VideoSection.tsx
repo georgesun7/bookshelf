@@ -81,15 +81,11 @@ const VideoCard = ({ video }: { video: Video }) => {
 
 const VideoSection = () => {
   return (
-    <section id="video" className="py-24 px-6">
+    <section id="video" className="py-16 md:py-24 px-6">
       <div className="max-w-4xl mx-auto">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-3 font-body">
-          Documentary
-        </p>
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-          Video Work
+        <h2 className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-body mb-10">
+          video & visual work
         </h2>
-        <div className="w-12 h-px bg-foreground mb-16" />
 
         <div className="grid gap-12">
           {sampleVideos.map((video, index) => (
