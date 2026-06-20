@@ -12,21 +12,13 @@ const sections = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6">
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-xs uppercase tracking-[0.35em] text-muted-foreground mb-6 font-body"
-      >
-        hi i'm (your name)
-      </motion.p>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
         className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16"
       >
-        your name
+        hi i'm (your name)
       </motion.h1>
 
       <motion.nav
