@@ -18,7 +18,7 @@ const Index = () => {
         transition={{ duration: 0.6 }}
         className="text-xs uppercase tracking-[0.35em] text-muted-foreground mb-6 font-body"
       >
-        journalist &amp; writer
+        hi i'm (your name)
       </motion.p>
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
