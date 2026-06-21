@@ -27,7 +27,7 @@ const Index = () => {
         transition={{ duration: 0.8, delay: 0.25 }}
         className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16"
       >
-        (your name)
+        george
       </motion.h1>
 
       <motion.nav
