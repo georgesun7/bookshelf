@@ -16,19 +16,35 @@ const Index = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-sm md:text-base font-body text-muted-foreground tracking-wide text-center mb-4"
+        className="text-base md:text-xl font-body text-muted-foreground tracking-wide text-center mb-4"
       >
         hi i'm
       </motion.p>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.25 }}
-        className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16"
-      >
-        george
-      </motion.h1>
+      <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16">
+        {"george".split("").map((char, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.1, delay: 0.5 + i * 0.12 }}
+          >
+            {char}
+          </motion.span>
+        ))}
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 1,
+            delay: 0.5 + "george".length * 0.12,
+            repeat: Infinity,
+            repeatDelay: 0.3,
+            times: [0, 0.2, 0.8, 1],
+          }}
+          className="inline-block w-[3px] h-[0.7em] bg-foreground ml-1 align-middle"
+        />
+      </h1>
 
       <motion.nav
         initial={{ opacity: 0, y: 10 }}
