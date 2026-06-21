@@ -21,23 +21,27 @@ const Index = () => {
         hi i'm
       </motion.p>
 
-      <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16">
+      <h1
+        key={Date.now()}
+        className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight text-foreground leading-[0.9] text-center mb-16"
+      >
         {"george".split("").map((char, i) => (
           <motion.span
             key={i}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.1, delay: 0.5 + i * 0.12 }}
+            transition={{ duration: 0.15, delay: 0.5 + i * 0.25 }}
           >
             {char}
           </motion.span>
         ))}
         <motion.span
+          key="cursor"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 1, 0] }}
           transition={{
             duration: 1,
-            delay: 0.5 + "george".length * 0.12,
+            delay: 0.5 + "george".length * 0.25,
             repeat: Infinity,
             repeatDelay: 0.3,
             times: [0, 0.2, 0.8, 1],
