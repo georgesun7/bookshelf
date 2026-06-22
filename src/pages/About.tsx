@@ -1,76 +1,57 @@
 import PageLayout from "@/components/PageLayout";
-import { Mail, Twitter, Linkedin } from "lucide-react";
-
-// Add photo URLs to display in the gallery below
-const photos: string[] = [
-  // "/about/photo-1.jpg",
-];
+import { Mail, LinkedinIcon } from "lucide-react";
+import profilePhoto from "@/assets/website_profile_bw.jpg";
 
 const About = () => {
   return (
     <PageLayout title="about me">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-10">
           about me
         </h1>
 
-        <div className="space-y-5 mb-12">
-          <p className="text-lg text-foreground font-body leading-relaxed">
-            I'm a journalist and writer based in New York City, specializing in investigative reporting and long-form narrative journalism.
-          </p>
-          <p className="text-muted-foreground font-body leading-relaxed">
-            Over the past decade, my reporting has appeared in publications including The Guardian, ProPublica, The New York Times, and Columbia Journalism Review.
-          </p>
-          <p className="text-muted-foreground font-body leading-relaxed">
-            When I'm not chasing a story, I mentor aspiring journalists and teach a workshop on investigative techniques.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_340px] gap-12 md:gap-16 items-start mb-12">
+          <div className="space-y-5">
+            <p className="text-lg text-foreground font-body leading-relaxed">
+              Hey! I'm George, a rising junior at Northwestern pursuing a B.S. in Journalism and a B.A. in Data Science.
+              I'm a journalist and writer based in the Chicago area, but am originally from Vancouver, Canada. My interests
+              lie in investigative reporting and documentary journalism.
+            </p>
 
-        {photos.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-12">
-            {photos.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                className="w-full aspect-square object-cover rounded-sm"
-              />
-            ))}
-          </div>
-        )}
+            <p className="text-muted-foreground font-body leading-relaxed">
+              This summer, I'll be working at <strong>The Chicago Reporter</strong> as an Investigative Reporting Intern where I'll be researching and writing data-driven stories
+              on public policy around the Chicagoland area. Next winter, I'll be residing in Washington D.C. and reporting on Capitol Hill as part of Northwestern's Medill on the Hill program.
+            </p>
 
-        <div className="grid grid-cols-2 gap-8 mb-12">
-          <div>
-            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body font-semibold mb-3">
-              expertise
-            </h3>
-            <ul className="space-y-1.5 text-sm text-foreground font-body">
-              <li>investigative reporting</li>
-              <li>long-form narrative</li>
-              <li>documentary video</li>
-              <li>data journalism</li>
-            </ul>
+            <p className="text-muted-foreground font-body leading-relaxed">
+              When I'm not chasing a story, I love playing basketball, journaling and learning languages. My current obsession is American Sign Language.
+              I'll be in between Chicago, Minneapolis, New York City, Vancouver and Shanghai this summer, so I'm happy to chat anytime and anywhere!
+            </p>
           </div>
-          <div>
-            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-body font-semibold mb-3">
-              education
-            </h3>
-            <ul className="space-y-1.5 text-sm text-foreground font-body">
-              <li>M.S. Journalism, Columbia University</li>
-              <li>B.A. English, NYU</li>
-            </ul>
+
+          <div className="w-full">
+            <img
+              src={profilePhoto}
+              alt="George"
+              className="w-full max-w-[340px] md:max-w-none object-cover"
+            />
           </div>
         </div>
 
         <div className="flex items-center gap-6 text-sm font-body pt-6 border-t border-border">
-          <a href="mailto:your@email.com" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+          <a
+            href="mailto:gsun@u.northwestern.edu"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
             <Mail className="w-4 h-4" /> email
           </a>
-          <a href="#" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            <Twitter className="w-4 h-4" /> twitter
-          </a>
-          <a href="#" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            <Linkedin className="w-4 h-4" /> linkedin
+          <a
+            href="https://www.linkedin.com/in/georgesunn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <LinkedinIcon className="w-4 h-4" /> linkedin
           </a>
         </div>
       </div>

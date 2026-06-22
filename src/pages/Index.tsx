@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const sections = [
-  { label: "about me", path: "/about" },
-  { label: "written work", path: "/written" },
-  { label: "video work", path: "/video" },
-  { label: "visual work", path: "/visual" },
+  { label: "about", path: "/about" },
+  { label: "written", path: "/written" },
+  { label: "video", path: "/video" },
+  { label: "visual", path: "/visual" },
   { label: "projects", path: "/projects" },
 ];
 
@@ -14,9 +14,7 @@ const phrases = [
   "storytell",
   "learn about people",
   "solve problems",
-  "investigate",
-  "listen",
-  "write creatively",
+  "write",
   "be a journalist",
 ];
 
@@ -61,8 +59,7 @@ const Index = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-base md:text-xl font-body text-muted-foreground tracking-wide text-center mb-4"
-      >
+        className="text-lg md:text-2xl font-body text-muted-foreground tracking-wide text-center mb-0 translate-y-5" >
         hi i'm
       </motion.p>
 
@@ -80,6 +77,7 @@ const Index = () => {
             {char}
           </motion.span>
         ))}
+{/*
         <motion.span
           key="cursor"
           initial={{ opacity: 0 }}
@@ -93,13 +91,15 @@ const Index = () => {
           }}
           className="inline-block w-[3px] h-[0.7em] bg-foreground ml-1 align-middle"
         />
+*/}
+
       </h1>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: georgeDelay }}
-        className="text-lg md:text-2xl font-body text-muted-foreground tracking-wide text-center mb-12"
+        className="mt-8 text-lg md:text-2xl font-body text-muted-foreground tracking-wide text-center mb-12"
       >
         and i love to {rotatingText}
         <motion.span

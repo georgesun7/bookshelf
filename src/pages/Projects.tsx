@@ -1,40 +1,33 @@
 import PageLayout from "@/components/PageLayout";
-import { Github, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
   date: string;
-  stack: string;
   description: string;
-  repoUrl?: string;
-  liveUrl?: string;
+  href: string;
 }
 
 const projects: Project[] = [
   {
-    title: "newsroom analytics dashboard",
+    title: "NBA Shot Quality Model",
+    date: "2026",
+    description:
+      "Using the NBA API, train a Gradient Boosting Model to predict if a player's shot will go in or not, considering distance, defender distance and more.",
+    href: "/projects/nba-shot-quality-model",
+  },
+  {
+    title: "Measuring NBA Player Winning Impact using Advanced Statistics",
+    date: "2026",
+    description: "Trained a Ridge regression model involving a variable number of predictors, then used RMSE and MAE to evaluate accuracy of model.",
+    href: "/projects/project-2",
+  },
+  {
+    title: "Measuring NBA Player Performance using Advanced NBA Statistics",
     date: "2025",
-    stack: "React · TypeScript · D3",
-    description:
-      "A dashboard that helps small newsrooms track story performance, reader engagement, and source diversity across publications.",
-    repoUrl: "#",
-  },
-  {
-    title: "interview transcription tool",
-    date: "2024",
-    stack: "Python · Whisper · FastAPI",
-    description:
-      "An open-source tool that transcribes long-form interviews with speaker diarization, designed for journalists working with sensitive audio.",
-    repoUrl: "#",
-  },
-  {
-    title: "public records explorer",
-    date: "2024",
-    stack: "Next.js · Postgres",
-    description:
-      "A searchable interface for FOIA documents, allowing reporters to surface patterns across thousands of pages of public records.",
-    repoUrl: "#",
-    liveUrl: "#",
+    description: "Cleaned and prepared data then created various visualizations for analaysis, including a boxplot, regression plot, lineplot and heatmap.",
+    href: "/projects/project-3",
   },
 ];
 
@@ -45,37 +38,32 @@ const Projects = () => {
         <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-10">
           projects
         </h1>
+
         <div className="space-y-10">
           {projects.map((p, i) => (
-            <article key={i} className="pb-10 border-b border-border last:border-b-0">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-body">
-                  {p.stack}
-                </span>
-                <span className="text-[10px] text-muted-foreground">•</span>
-                <span className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-body">
-                  {p.date}
-                </span>
-              </div>
-              <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3">
-                {p.title}
-              </h2>
-              <p className="text-muted-foreground font-body leading-relaxed mb-4">
-                {p.description}
-              </p>
-              <div className="flex items-center gap-5 text-sm font-body">
-                {p.repoUrl && (
-                  <a href={p.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
-                    <Github className="w-3.5 h-3.5" /> code
-                  </a>
-                )}
-                {p.liveUrl && (
-                  <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
-                    <ExternalLink className="w-3.5 h-3.5" /> live
-                  </a>
-                )}
-              </div>
-            </article>
+            <Link to={p.href} key={i} className="block group">
+              <article className="pb-10 border-b border-border last:border-b-0 hover:bg-secondary/50 transition-colors px-1 -mx-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-body">
+                    {p.date}
+                  </span>
+                </div>
+
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground mb-3 group-hover:opacity-70 transition-opacity">
+                      {p.title}
+                    </h2>
+
+                    <p className="text-muted-foreground font-body leading-relaxed">
+                      {p.description}
+                    </p>
+                  </div>
+
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors mt-2 flex-shrink-0" />
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
