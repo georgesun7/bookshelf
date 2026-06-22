@@ -20,7 +20,8 @@ const About = () => {
 
             <p className="text-muted-foreground font-body leading-relaxed">
               This summer, I'll be working at <strong>The Chicago Reporter</strong> as an Investigative Reporting Intern where I'll be researching and writing data-driven stories
-              on public policy around the Chicagoland area. Next winter, I'll be residing in Washington D.C. and reporting on Capitol Hill as part of Northwestern's Medill on the Hill program.
+              on public policy around the Chicagoland area. Next fall, I'll be serving as the Editor-in-Chief of nuAZN, an Asian-interest literary magazine at Northwestern. 
+              And in the winter, I'll be residing in Washington D.C. and reporting on Capitol Hill as part of Northwestern's Medill on the Hill program.
             </p>
 
             <p className="text-muted-foreground font-body leading-relaxed">
